@@ -22,21 +22,30 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/yshrsmz/OpenSSLTest2'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'yshrsmz' => 'the.phantom.bane@gmail.com' }
   s.source           = { :git => 'https://github.com/yshrsmz/OpenSSLTest2.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
+  s.swift_version = '4.2'
+  s.platform = :ios
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'OpenSSLTest2/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'OpenSSLTest2' => ['OpenSSLTest2/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.module_name = 'OpenSSL'
+  s.source_files = 'OpenSSLTest2/Classes/**/*.swift', 'OpenSSLTest2/OpenSSL/include/**/*.h'
+  s.header_dir = 'openssl'
+  s.public_header_files = 'OpenSSLTest2/OpenSSL/include/openssl/*.h'
+  s.preserve_paths = 'OpenSSLTest2/Classes/OpenSSL/module.modulemap'
+  s.libraries = 'crypto', 'ssl'
+  s.vendored_libraries = 'OpenSSLTest2/OpenSSL/lib/libcrypto.a', 'OpenSSLTest2/OpenSSL/lib/libssl.a'
+  
+  s.pod_target_xcconfig = {
+      'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/OpenSSLTest2/OpenSSL/module $(PODS_TARGET_ROOT)/OpenSSL/module',
+      'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/OpenSSLTest2/OpenSSL/include $(PODS_TARGET_ROOT)/OpenSSL/include',
+      'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/OpenSSLTest2/OpenSSL/lib'
+  }
+  
+  s.xcconfig = {
+      
+  }
 end

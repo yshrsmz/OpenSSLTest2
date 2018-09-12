@@ -1,0 +1,45 @@
+{
+  "name": "OpenSSLTest2",
+  "version": "0.1.0",
+  "summary": "A short description of OpenSSLTest2.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/yshrsmz/OpenSSLTest2",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "yshrsmz": "the.phantom.bane@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/yshrsmz/OpenSSLTest2.git",
+    "tag": "0.1.0"
+  },
+  "swift_version": "4.2",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "module_name": "OpenSSL",
+  "source_files": [
+    "OpenSSLTest2/Classes/**/*.swift",
+    "OpenSSLTest2/OpenSSL/include/**/*.h"
+  ],
+  "header_dir": "openssl",
+  "public_header_files": "OpenSSLTest2/OpenSSL/include/openssl/*.h",
+  "preserve_paths": "OpenSSLTest2/Classes/OpenSSL/module.modulemap",
+  "libraries": [
+    "crypto",
+    "ssl"
+  ],
+  "vendored_libraries": [
+    "OpenSSLTest2/OpenSSL/lib/libcrypto.a",
+    "OpenSSLTest2/OpenSSL/lib/libssl.a"
+  ],
+  "pod_target_xcconfig": {
+    "SWIFT_INCLUDE_PATHS": "$(PODS_ROOT)/OpenSSLTest2/OpenSSL/module $(PODS_TARGET_ROOT)/OpenSSL/module",
+    "HEADER_SEARCH_PATHS": "$(PODS_ROOT)/OpenSSLTest2/OpenSSL/include $(PODS_TARGET_ROOT)/OpenSSL/include",
+    "LIBRARY_SEARCH_PATHS": "$(PODS_ROOT)/OpenSSLTest2/OpenSSL/lib"
+  },
+  "xcconfig": {
+  }
+}
