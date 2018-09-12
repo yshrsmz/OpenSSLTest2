@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'OpenSSLTest2_Example' do
+  pod 'OpenSSLTest2', :path => '../'
+
+  target 'OpenSSLTest2_Tests' do
+    inherit! :search_paths
+
+    pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.0.2'
+  end
+end
