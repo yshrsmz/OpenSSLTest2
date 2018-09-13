@@ -41,11 +41,7 @@ TODO: Add long description of the pod here.
   
   s.pod_target_xcconfig = {
       'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/OpenSSLTest2/OpenSSL/module $(PODS_TARGET_ROOT)/OpenSSL/module',
-      'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/OpenSSLTest2/OpenSSL/include $(PODS_TARGET_ROOT)/OpenSSL/include',
+      #'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/OpenSSLTest2/OpenSSL/include $(PODS_TARGET_ROOT)/OpenSSL/include',
       'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/OpenSSLTest2/OpenSSL/lib'
-  }
-  
-  s.xcconfig = {
-      
   }
 end
