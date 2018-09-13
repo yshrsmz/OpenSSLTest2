@@ -38,7 +38,5 @@
   "pod_target_xcconfig": {
     "SWIFT_INCLUDE_PATHS": "$(PODS_ROOT)/OpenSSLTest2/OpenSSL/module $(PODS_TARGET_ROOT)/OpenSSL/module",
     "LIBRARY_SEARCH_PATHS": "$(PODS_ROOT)/OpenSSLTest2/OpenSSL/lib"
-  },
-  "xcconfig": {
   }
 }
